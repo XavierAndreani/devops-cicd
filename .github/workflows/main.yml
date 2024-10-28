@@ -19,7 +19,7 @@ jobs:
         uses: actions/setup-java@v3
         with :
           java-version: '17'
-          distribution : 'correto'
+          distribution : 'corretto'
         #TODO
 
       #finally build your app with the latest command
