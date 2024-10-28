@@ -26,8 +26,10 @@ jobs:
         working-directory: ./simple-api
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -B verify sonar:sonar \
+        run: |
+          mvn -B verify sonar:sonar \
           -Dsonar.projectKey=XavierAndreani_devops-cicd \
           -Dsonar.organization=xavierandreani \
           -Dsonar.host.url=https://sonarcloud.io \
-          -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+          -Dsonar.login=${{ secrets.SONAR_TOKEN }} \
+          --file pom.xml
