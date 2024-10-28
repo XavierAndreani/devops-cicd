@@ -26,7 +26,6 @@ jobs:
         run:
           - mvn clean verify -f ./simple-api/pom.xml
       - name: SonarQube Scan
-        uses: SonarSource/sonarqube-scan-action@v1.0.1
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: mvn -B verify sonar:sonar -Dsonar.projectKey=tpdevopsxavier_tpdevops -Dsonar.organization=tpdevopsxavier -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }}  --file ./simple-api/pom.xml
