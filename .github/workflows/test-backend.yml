@@ -23,11 +23,11 @@ jobs:
         run: mvn clean verify -f ./simple-api/pom.xml
 
       - name: SonarQube Scan
+        working-directory: ./simple-api
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: mvn -B verify sonar:sonar \
           -Dsonar.projectKey=XavierAndreani_devops-cicd \
           -Dsonar.organization=xavierandreani \
           -Dsonar.host.url=https://sonarcloud.io \
-          -Dsonar.login=${{ secrets.SONAR_TOKEN }} \
-          --file ./simple-api/pom.xml
+          -Dsonar.login=${{ secrets.SONAR_TOKEN }}
