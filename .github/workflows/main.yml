@@ -19,8 +19,9 @@ jobs:
         uses: actions/setup-java@v3
         with :
           java-version: '17'
+          distribution : 'temurin'
         #TODO
 
       #finally build your app with the latest command
       - name: Build and test with Maven
-        run: mvn clean install
+        run: mvn clean install -f ./simple-api/pom.xml
