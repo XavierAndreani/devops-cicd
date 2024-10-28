@@ -23,8 +23,7 @@ jobs:
 
       #finally build your app with the latest command
       - name: Build and test with Maven
-        run:
-          - mvn clean verify -f ./simple-api/pom.xml
+        run: mvn clean verify -f ./simple-api/pom.xml
       - name: SonarQube Scan
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
